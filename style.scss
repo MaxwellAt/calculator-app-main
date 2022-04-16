@@ -1,0 +1,53 @@
+@mixin texto1 ($color) {
+  color: $color;
+  font-family: 'Spartan', sans-serif;
+}
+body{
+    height: 90vh;
+    background-color: hsl(222, 26%, 31%);
+}
+main{
+    @include texto1(hsl(0, 0, 100%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+div{
+    border-radius: 10px;
+}
+.parteDeCima{
+    height: 10%;
+}
+.output{
+    background-color: hsl(223, 31%, 20%);
+    height: 2em;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: 2em;
+    font-family: 'Spartan', sans-serif;
+    padding: 20px;
+}
+.linha{
+    display: flex;
+    justify-content: space-between;
+}
+.numero {
+    background-color: hsl(0, 0, 100%);
+    color: hsl(221, 14%, 31%);
+    padding: 5%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em !important;
+}
+.numero:active{
+    transition: 0.1s;
+    transform: scale(0.9);
+}
+.parteDeBaixo{
+    background-color: hsl(223, 31%, 20%);
+    padding: 4%;
+}
