@@ -24,6 +24,12 @@ div {
 
 .parteDeCima {
   height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .output {
@@ -80,5 +86,69 @@ div {
 .parteDeBaixo {
   background-color: #232c43;
   padding: 4%;
+}
+
+.stilos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5em;
+  background-color: #232c43;
+  border-radius: 20px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 5px;
+}
+
+.stilos input[type="radio"] {
+  position: fixed;
+  display: none;
+}
+
+.stilos .um {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1.5em;
+}
+
+.stilos span:before {
+  content: '.';
+  color: transparent;
+}
+
+.stilos .teste:checked + span:before {
+  content: '.';
+  color: transparent;
+  background-color: #d03f2f;
+  border-radius: 100%;
+  display: block;
+}
+
+.stilos .ops:checked + span:before {
+  content: '.';
+  color: #d03f2f;
+  background-color: #d03f2f;
+  border-radius: 100%;
+  display: block;
+}
+
+.stilos span {
+  width: 80%;
 }
 /*# sourceMappingURL=style.css.map */

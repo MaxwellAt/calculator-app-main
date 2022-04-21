@@ -32,8 +32,31 @@ function clear(){
 var parteDeCima = (
     <div Style='width:30em'>
         <div className='parteDeCima'>
-            <span Style='font-size: 1.5em;'>calc</span>
-            <div></div>
+            <span Style='font-size: 1.5em;margin-top: 20px;'>calc</span>
+            <div Style='display:flex;align-items: center;'>
+                <span Style='position: relative;margin: 5px;top: 13px;right:10px;font-size:10px'>THEME</span>
+                <div>
+                    <div Style='display: flex;justify-content: space-evenly;'>
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </div>
+                    <div className='stilos'>
+                        <label className='um' onClick={() => console.log('as')}>
+                            <input className='teste' name='teste'type='radio' checked/>
+                            <span></span>
+                        </label>
+                        <label className='um'>
+                            <input className='ops' name='teste' type='radio'/>
+                        <span></span>
+                        </label>
+                        <label className='um'>
+                            <input className='ops' name='teste' type='radio'/>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <br/>
