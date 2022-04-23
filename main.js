@@ -16,7 +16,7 @@ function H(x){
     }
 }
 function result(){
-    const num = document.getElementById('out').innerHTML;
+    const num = document.getElementById('out').innerHTML + '';
     const result = eval(num);
     document.getElementById('out').innerHTML = result;
 }
@@ -28,6 +28,66 @@ function clear(){
         document.getElementById('out').type = 'um';
         document.getElementById('out').innerHTML = 0;
     }
+}
+// $('[name="teste"]').on('change', (e) => { 
+//   let a = $('input[name="teste"]:checked');
+//   if(a.val() === "2"){
+//     console.log('tema 2');
+//   }else{
+//     console.log('asdasd');
+//   }
+// });
+// $('input[name="teste"]').on('change', (e) => { 
+
+//   });
+function trocarTema(){
+    let a = $('input[name="teste"]:checked');
+    if(a.val() === "2"){
+      temaDois();
+    }else if(a.val() === "1"){
+        temaUm();
+        console.log('asdasd');
+    }else{
+        temaTres();
+        console.log('asdasd');
+    }
+}
+function temaTres(){
+    $('body').css('background-color', 'hsl(268, 75%, 9%)');
+    $('.parteDeCima').css('color', 'hsl(52, 100%, 62%)');
+    $('.parteDeBaixo').css('background-color', 'hsl(268, 71%, 12%)');
+    $('.stilos').css('background-color', 'hsl(268, 71%, 12%)');
+    $('.reset').css('background-color', 'hsl(268, 47%, 21%)');
+    $('.del').css('background-color', 'hsl(268, 47%, 21%)');
+    $('.igual').css('background-color', 'hsl(176, 100%, 44%)');
+    $('.output').css('background-color', 'hsl(268, 71%, 12%)');
+    $('.output').css('color', 'hsl(52, 100%, 62%)');
+    $('.numero').css('color', 'hsl(52, 100%, 62%)');
+    $('.numero').css('background-color', 'hsl(281, 89%, 26%)');
+}
+function temaUm(){
+    $('body').removeAttr('style');
+    $('.parteDeCima').css('color', '');
+    $('.parteDeBaixo').css('background-color', '');
+    $('.stilos').css('background-color', '');
+    $('.reset').css('background-color', '');
+    $('.del').css('background-color', '');
+    $('.igual').css('background-color', '');
+    $('.output').css('background-color', '');
+    $('.output').css('color', '');
+    $('.numero').css('color', '');
+    $('.numero').css('background-color', '');
+}
+function temaDois(){
+    $('body').css('background-color', 'hsl(0, 0%, 90%)');
+    $('.parteDeCima').css('color', 'hsl(60, 10%, 19%)');
+    $('.parteDeBaixo').css('background-color', 'hsl(0, 5%, 81%)');
+    $('.stilos').css('background-color', 'hsl(0, 5%, 81%)');
+    $('.reset').css('background-color', 'hsl(185, 42%, 37%)');
+    $('.del').css('background-color', 'hsl(185, 42%, 37%)');
+    $('.igual').css('background-color', 'hsl(25, 98%, 40%)');
+    $('.output').css('background-color', 'hsl(0, 0%, 93%)');
+    $('.output').css('color', 'hsl(60, 10%, 19%)');
 }
 var parteDeCima = (
     <div Style='width:30em'>
@@ -41,17 +101,17 @@ var parteDeCima = (
                         <span>2</span>
                         <span>3</span>
                     </div>
-                    <div className='stilos'>
-                        <label className='um' onClick={() => console.log('as')}>
-                            <input className='teste' name='teste'type='radio' checked/>
+                    <div onChange={trocarTema} className='stilos'>
+                        <label className='rdoum'>
+                            <input className='teste um' name='teste' value='1' type='radio' />
                             <span></span>
                         </label>
-                        <label className='um'>
-                            <input className='ops' name='teste' type='radio'/>
+                        <label className='rdoum'>
+                            <input className='teste dois' name='teste' value='2' type='radio'/>
                         <span></span>
                         </label>
-                        <label className='um'>
-                            <input className='ops' name='teste' type='radio'/>
+                        <label className='rdoum'>
+                            <input className='ops tres' name='teste' value='3' type='radio'/>
                             <span></span>
                         </label>
                     </div>
@@ -69,36 +129,36 @@ var parteDeCima = (
 
         <div className='parteDeBaixo'>
             <div className="linha">
-                <div className='numero' onClick={() => H(7)} id="7">7</div>
-                <div className='numero' onClick={() => H(8)} id="8">8</div>
-                <div className='numero' onClick={() => H(9)} id="9">9</div>
-                <div className='numero' Style='background-color:hsl(225, 21%, 49%);color:white!important' onClick={clear}>DEL</div>
+                <div className='numero' onClick={() => H("7")} id="7">7</div>
+                <div className='numero' onClick={() => H("8")} id="8">8</div>
+                <div className='numero' onClick={() => H("9")} id="9">9</div>
+                <div className='numero del' onClick={clear}>DEL</div>
             </div>
             <br/>
             <div className="linha">
-                <div className='numero' onClick={() => H(4)} id="4">4</div>
-                <div className='numero' onClick={() => H(5)} id="5">5</div>
-                <div className='numero' onClick={() => H(6)} id="6">6</div>
+                <div className='numero' onClick={() => H("4")} id="4">4</div>
+                <div className='numero' onClick={() => H("5")} id="5">5</div>
+                <div className='numero' onClick={() => H("6")} id="6">6</div>
                 <div className='numero' onClick={() => H('+')} id="+">+</div>
             </div>
             <br/>
             <div className="linha">
-                <div className='numero' onClick={() => H(1)} id="1">1</div>
-                <div className='numero' onClick={() => H(2)} id="2">2</div>
-                <div className='numero' onClick={() => H(3)} id="3">3</div>
+                <div className='numero' onClick={() => H("1")} id="1">1</div>
+                <div className='numero' onClick={() => H("2")} id="2">2</div>
+                <div className='numero' onClick={() => H("3")} id="3">3</div>
                 <div className='numero' onClick={() => H('-')} id="-">-</div>
             </div>
             <br/>
             <div className="linha">
                 <div className='numero' onClick={() => H('.')} id=".">.</div>
-                <div className='numero' onClick={() => H(0)} id="0">0</div>
+                <div className='numero' onClick={() => H("0")} id="0">0</div>
                 <div className='numero' onClick={() => H('/')} id="/">/</div>
                 <div className='numero' onClick={() => H('*')} id="*">*</div>
             </div>
             <br/>
             <div className="linha">
-                <div className='numero' Style='width:37%;background-color:hsl(225, 21%, 49%);color:white!important' onClick={As}>RESET</div>
-                <div className='numero' Style='width:37%;background-color:hsl(6, 63%, 50%);color:white!important' onClick={result}>=</div>
+                <div className='numero reset' onClick={As}>RESET</div>
+                <div className='numero igual' onClick={result}>=</div>
             </div>
         </div>
     </div>

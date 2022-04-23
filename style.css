@@ -88,6 +88,23 @@ div {
   padding: 4%;
 }
 
+.reset {
+  width: 37%;
+  background-color: #637097;
+  color: white !important;
+}
+
+.igual {
+  width: 37%;
+  background-color: #d03f2f;
+  color: white !important;
+}
+
+.del {
+  background-color: #637097;
+  color: white !important;
+}
+
 .stilos {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,7 +130,7 @@ div {
   display: none;
 }
 
-.stilos .um {
+.stilos .rdoum {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,8 +159,8 @@ div {
 
 .stilos .ops:checked + span:before {
   content: '.';
-  color: #d03f2f;
-  background-color: #d03f2f;
+  color: #00e0d1;
+  background-color: #00e0d1;
   border-radius: 100%;
   display: block;
 }
