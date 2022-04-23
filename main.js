@@ -19,6 +19,7 @@ function result(){
     const num = document.getElementById('out').innerHTML + '';
     const result = eval(num);
     document.getElementById('out').innerHTML = result;
+    document.getElementById('out').type = 'um';
 }
 function clear(){
     const p = document.getElementById('out').innerHTML;
@@ -29,28 +30,9 @@ function clear(){
         document.getElementById('out').innerHTML = 0;
     }
 }
-// $('[name="teste"]').on('change', (e) => { 
-//   let a = $('input[name="teste"]:checked');
-//   if(a.val() === "2"){
-//     console.log('tema 2');
-//   }else{
-//     console.log('asdasd');
-//   }
-// });
-// $('input[name="teste"]').on('change', (e) => { 
-
-//   });
 function trocarTema(){
-    let a = $('input[name="teste"]:checked');
-    if(a.val() === "2"){
-      temaDois();
-    }else if(a.val() === "1"){
-        temaUm();
-        console.log('asdasd');
-    }else{
-        temaTres();
-        console.log('asdasd');
-    }
+    var a = $('input[name="teste"]:checked');
+    a.val() === "1" ? temaUm() : a.val() === "2" ? temaDois() : temaTres();
 }
 function temaTres(){
     $('body').css('background-color', 'hsl(268, 75%, 9%)');
@@ -88,6 +70,8 @@ function temaDois(){
     $('.igual').css('background-color', 'hsl(25, 98%, 40%)');
     $('.output').css('background-color', 'hsl(0, 0%, 93%)');
     $('.output').css('color', 'hsl(60, 10%, 19%)');
+    $('.numero').css('color', '');
+    $('.numero').css('background-color', '');
 }
 var parteDeCima = (
     <div Style='width:30em'>
@@ -103,7 +87,7 @@ var parteDeCima = (
                     </div>
                     <div onChange={trocarTema} className='stilos'>
                         <label className='rdoum'>
-                            <input className='teste um' name='teste' value='1' type='radio' />
+                            <input className='teste um' name='teste' value='1' type='radio'/>
                             <span></span>
                         </label>
                         <label className='rdoum'>
@@ -164,3 +148,6 @@ var parteDeCima = (
     </div>
 );
 ReactDOM.render( parteDeCima, here);
+
+const a = $('input[value="1"]');
+a.attr('checked', 'checked');
